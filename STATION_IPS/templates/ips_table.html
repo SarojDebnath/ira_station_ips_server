@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Addresses</title>
+    <style>
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: underline;
+        }
+        .logo {
+            filter: invert(1);
+            margin: 10px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #8ddd90;
+        }
+        tr:first-child {
+            background-color: rgb(14, 162, 14);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="..\static\adtran-logo.svg" alt="">
+    </div>
+    <h2>IRA Station IPs</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>StationID</th>
+            <th>IP</th>
+        </tr>
+        {% for entry in ips %}
+        <tr>
+            <td>{{ entry.Name }}</td>
+            <td>{{ entry.StationID }}</td>
+            <td>{{ entry.IP }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
